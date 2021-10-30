@@ -1,0 +1,6 @@
+install:
+  - vcluster:
+      description: Create a virtual k3s cluster
+      create:
+        name: vcluster-1
+        namespace: host-vcluster-1

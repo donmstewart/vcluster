@@ -1,0 +1,261 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "installStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
+    "upgradeStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
+    "invokeStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
+    "uninstallStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
+    "stepDescription": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          },
+          "regex": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ],
+        "oneOf": [
+          { "required": [ "jsonPath" ] },
+          { "required": [ "regex" ] },
+          { "required": [ "path" ] }
+        ]
+      }
+    },
+    "vcluster": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/stepDescription"
+        },
+        "create": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "k3sImage": {
+              "type": "string"
+            },
+            "createClusterRole": {
+              "type": "boolean"
+            },
+            "createNamespace": {
+              "type": "boolean"
+            },
+            "disableIngressSync": {
+              "type": "boolean"
+            },
+            "upgrade": {
+              "type": "boolean"
+            },
+            "connect": {
+              "type": "boolean"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+          },
+        "connect": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "kubeConfig": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "localPort": {
+              "type": "integer"
+            },
+            "pod": {
+              "type": "string"
+            },
+            "server": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+        },
+        "delete": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "deleteNamespace": {
+              "type": "boolean"
+            },
+            "keepPVC": {
+              "type": "boolean"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "install": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/installStep"
+      }
+    },
+    "upgrade": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/upgradeStep"
+      }
+    },
+    "uninstall": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/uninstallStep"
+      }
+    }
+  },
+  "patternProperties": {
+    ".*": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/invokeStep"
+      }
+    }
+  },
+  "additionalProperties": false
+}

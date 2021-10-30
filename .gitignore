@@ -1,3 +1,4 @@
-bin
-.cnab
-*-packr.go
+Dockerfile
+.cnab/
+/bin/
+/build/

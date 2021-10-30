@@ -1,0 +1,6 @@
+install:
+  - vcluster:
+      description: Connect to an existing virtual k3s cluster
+      connect:
+        name: vcluster-1
+        namespace: host-vcluster-1

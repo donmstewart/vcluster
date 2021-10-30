@@ -1,0 +1,6 @@
+install:
+  - vcluster:
+      description: Delete a vcluster
+      delete:
+        name: vcluster-1
+        namespace: host-vcluster-1

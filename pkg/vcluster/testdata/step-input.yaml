@@ -1,0 +1,3 @@
+install:
+  - vcluster:
+      description: "Summon Minion"
