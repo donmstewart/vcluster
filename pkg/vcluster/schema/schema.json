@@ -104,6 +104,9 @@
             "disableIngressSync": {
               "type": "boolean"
             },
+            "expose": {
+              "type": "boolean"
+            },
             "upgrade": {
               "type": "boolean"
             },

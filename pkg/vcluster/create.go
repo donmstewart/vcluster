@@ -14,6 +14,7 @@ type CreateCommand struct {
 	Upgrade            bool          `yaml:"upgrade"`
 	K3SImage           string        `yaml:"k3sImage"`
 	Connect            bool          `yaml:"connect"`
+	Expose             bool          `yaml:"expose"`
 	Arguments          []string      `yaml:"arguments,omitempty"`
 	Flags              builder.Flags `yaml:"flags,omitempty"`
 	Outputs            []Output      `yaml:"outputs,omitempty"`
@@ -67,11 +68,15 @@ func (c CreateCommand) GetArguments() []string {
 		args = append(args, "--upgrade")
 	}
 
+	if c.Expose {
+		args = append(args, "--expose")
+	}
+
 	args = append(args, c.Arguments...)
 
-	if c.Connect {
-		args = append(args, "&")
-	}
+	// if c.Connect {
+	// 	args = append(args, "&")
+	// }
 
 	return args
 }
