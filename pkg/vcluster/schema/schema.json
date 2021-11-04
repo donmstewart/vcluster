@@ -107,6 +107,9 @@
             "expose": {
               "type": "boolean"
             },
+            "extraConfig": {
+              "type": "string"
+            },
             "upgrade": {
               "type": "boolean"
             },
