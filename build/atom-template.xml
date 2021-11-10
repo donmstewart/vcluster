@@ -1,24 +1,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://porter.sh</id>
-    <title>Porter Mixins</title>
+    <id>https://github.com/donmstewart/vcluster</id>
+    <title>Porter VCluster Mixin</title>
     <updated>{{Updated}}</updated>
-    <link rel="self" href="https://cdn.porter.sh/mixins/atom.xml"/>
+    <link rel="self" href="https://github.com/donmstewart/vcluster/atom.xml"/>
     <author>
-        <name>Porter Authors</name>
-        <uri>https://porter.sh/mixins</uri>
+        <name>Don Stewart</name>
+        <uri>https://github.com/donmstewart/vcluster</uri>
     </author>
     {{#Mixins}}
     <category term="{{.}}"/>
     {{/Mixins}}
     {{#Entries}}
     <entry>
-        <id>https://cdn.porter.sh/mixins/{{Mixin}}/{{Version}}</id>
+        <id>https://github.com/donmstewart/vcluster/releases/download/{{Mixin}}/{{Version}}</id>
         <title>{{Mixin}} @ {{Version}}</title>
         <updated>{{Updated}}</updated>
         <category term="{{Mixin}}"/>
         <content>{{Version}}</content>
         {{#Files}}
-        <link rel="download" href="https://cdn.porter.sh/mixins/{{Mixin}}/{{Version}}/{{File}}" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/{{Version}}/{{File}}" />
+        {{/Files}}
+    </entry>
+    <entry>
+        <id>https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster</id>
+        <title>vcluster @ 0.1.5</title>
+        <updated>{{Updated}}</updated>
+        <category term="vcluster"/>
+        <content>0.1.5</content>
+        {{#Files}}
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-darwin-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-linux-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-windows-amd64.exe" />
         {{/Files}}
     </entry>
     {{/Entries}}
