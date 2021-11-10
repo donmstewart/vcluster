@@ -75,7 +75,7 @@ and provide the necessary arguments to the intall/create step: -
         extraConfig: config/vcluster/values.yaml
 ```
 
-In the example above the vlcuster name & namespace are set to the value of a bubdle parameter called `vcluster` shown
+In the example above the vlcuster name & namespace are set to the value of a bundle parameter called `vcluster` shown
 above as `"{{ bundle.parameters.vcluster }}"`.
 
 The following two parameters are needed to successfully create a new vcluster.
@@ -130,12 +130,12 @@ metadata:
   namespace: porter-operator-namespace
   name: porter-vcluster
 spec:
-  reference: "imagerepoitory/image:tag"
+  reference: "imagerepoitory/porter-vcluster:tag"
   action: "install"
   parameters:
     vcluster: vcluster-1
     kubeconfig: YXBpVmVyc2lvbjogdjEKa2luZDo ...
 ```
 
-* NOTE: *
-The `kubeconfig` is a base64 encoded kube config yaml for the host cluster.
+* NOTE:
+The `kubeconfig` parameter is a base64 encoded kube config yaml for the host cluster and not the name of a file.
