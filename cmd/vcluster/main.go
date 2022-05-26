@@ -5,8 +5,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/donmstewart/vcluster/pkg/vcluster"
 	"github.com/spf13/cobra"
+
+	"github.com/donmstewart/vcluster/pkg/vcluster"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 		fmt.Printf("err: %s\n", err)
 		os.Exit(1)
 	}
+
 	if err := cmd.Execute(); err != nil {
 		fmt.Printf("err: %s\n", err)
 		os.Exit(1)
@@ -26,7 +28,9 @@ func buildRootCommand(in io.Reader) (*cobra.Command, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	m.In = in
+
 	cmd := &cobra.Command{
 		Use:  "vcluster",
 		Long: "A skeleton mixin to use for building other mixins for porter 👩🏽‍✈️",

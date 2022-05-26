@@ -98,7 +98,7 @@ func (m *Mixin) Build() error {
 	}
 
 	if input.Config.ClientVersion != "" {
-		m.ClientArchitecture = input.Config.ClientVersion
+		m.ClientVersion = input.Config.ClientVersion
 	}
 
 	if input.Config.ClientPlatform != "" {
