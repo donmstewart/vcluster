@@ -33,7 +33,7 @@ func buildRootCommand(in io.Reader) (*cobra.Command, error) {
 
 	cmd := &cobra.Command{
 		Use:  "vcluster",
-		Long: "A skeleton mixin to use for building other mixins for porter 👩🏽‍✈️",
+		Long: "A mixin to create virtual kubernetes clusters using porter 👩🏽‍✈️",
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			// Enable swapping out stdout/stderr for testing
 			m.Out = cmd.OutOrStdout()
@@ -51,6 +51,8 @@ func buildRootCommand(in io.Reader) (*cobra.Command, error) {
 	cmd.AddCommand(buildInvokeCommand(m))
 	cmd.AddCommand(buildUpgradeCommand(m))
 	cmd.AddCommand(buildUninstallCommand(m))
+	cmd.AddCommand(buildPauseCommand(m))
+	cmd.AddCommand(buildResumeCommand(m))
 
 	return cmd, nil
 }

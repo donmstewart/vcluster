@@ -6,10 +6,10 @@ import (
 	"github.com/donmstewart/vcluster/pkg/vcluster"
 )
 
-func buildUpgradeCommand(m *vcluster.Mixin) *cobra.Command {
+func buildPauseCommand(m *vcluster.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "upgrade",
-		Short: "Upgrades an existing vcluster",
+		Use:   "pause",
+		Short: "Pauses a running virtual cluster",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return m.Execute()
 		},

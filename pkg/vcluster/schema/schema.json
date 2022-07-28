@@ -11,6 +11,26 @@
       ],
       "additionalProperties": false
     },
+    "pauseStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
+    "resumeStep": {
+      "type": "object",
+      "properties": {
+        "vcluster": {"$ref": "#/definitions/vcluster"}
+      },
+      "required": [
+        "vcluster"
+      ],
+      "additionalProperties": false
+    },
     "upgradeStep": {
       "type": "object",
       "properties": {
@@ -187,6 +207,40 @@
             "namespace"
           ]
         },
+        "disconnect": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+        },
         "delete": {
           "type": "object",
           "properties": {
@@ -226,6 +280,111 @@
             "name",
             "namespace"
           ]
+        },
+        "pause": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+        },
+        "resume": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
+        },
+        "upgrade": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "kubeContext": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flags": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["null","boolean","number","string"]
+              }
+            },
+            "outputs": {
+              "$ref": "#/definitions/outputs"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "namespace"
+          ]
         }
       },
       "additionalProperties": false,
@@ -240,6 +399,18 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/installStep"
+      }
+    },
+    "pause": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/pauseStep"
+      }
+    },
+    "resume": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/resumeStep"
       }
     },
     "upgrade": {

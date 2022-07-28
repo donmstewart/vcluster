@@ -95,8 +95,16 @@ func (s *VClusterStep) UnmarshalYAML(unmarshal func(interface{}) error) error {
 			cmd = &CreateCommand{}
 		case "connect":
 			cmd = &ConnectCommand{}
+		case "disconnect":
+			cmd = &DisconnectCommand{}
 		case "delete":
 			cmd = &DeleteCommand{}
+		case "pause":
+			cmd = &PauseCommand{}
+		case "resume":
+			cmd = &ResumeCommand{}
+		case "upgrade":
+			cmd = &UpgradeCommand{}
 		default:
 			return errors.Errorf("unsupported vcluster mixin command %s", key)
 		}

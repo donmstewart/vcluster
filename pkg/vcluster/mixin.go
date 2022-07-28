@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	defaultVClusterClientVersion string = "v0.4.3"
+	defaultVClusterClientVersion string = "v0.10.2"
 	defaultClientPlatform        string = "linux"
 	defaultClientArchitecture    string = "amd64"
 	defaultHelmClientVersion     string = "v3.3.4"

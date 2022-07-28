@@ -13,7 +13,7 @@ var (
 func buildInstallCommand(m *vcluster.Mixin) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "install",
-		Short: "Execute the install functionality of this mixin",
+		Short: "Installs/Creates a new Virtual Cluster",
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			// Do something here if needed
 			return nil
