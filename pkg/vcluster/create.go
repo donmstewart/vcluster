@@ -83,7 +83,7 @@ func (c CreateCommand) GetArguments() []string {
 
 	if c.KubernetesVersion != "" {
 		args = append(args, "--kubernetes-version")
-		args = append(args, c.Distro)
+		args = append(args, c.KubernetesVersion)
 	}
 
 	if c.Connect {
