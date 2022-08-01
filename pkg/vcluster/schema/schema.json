@@ -109,10 +109,22 @@
             "namespace": {
               "type": "string"
             },
+            "chartName": {
+              "type": "string"
+            },
+            "chartRepo": {
+              "type": "string"
+            },
+            "chartVersion": {
+              "type": "string"
+            },
             "kubeContext": {
               "type": "string"
             },
-            "k3sImage": {
+            "distro": {
+              "type": "string"
+            },
+            "kubernetesVersion": {
               "type": "string"
             },
             "createClusterRole": {
@@ -125,6 +137,9 @@
               "type": "boolean"
             },
             "expose": {
+              "type": "boolean"
+            },
+            "isolate": {
               "type": "boolean"
             },
             "extraConfig": {
