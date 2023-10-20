@@ -9,29 +9,29 @@
     </author>
     <category term="vcluster"/>
     <entry>
-        <id>https://github.com/donmstewart/vcluster/releases/download/vcluster/0.1.5</id>
-        <title>vcluster @ 0.1.5</title>
+        <id>https://github.com/donmstewart/vcluster/releases/download/vcluster/0.1.6</id>
+        <title>vcluster @ 0.1.6</title>
         <updated>2021-11-10T23:32:54Z</updated>
         <category term="vcluster"/>
-        <content>0.1.5</content>
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-darwin-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-linux-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-windows-amd64.exe" />
+        <content>0.1.6</content>
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-darwin-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-linux-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-windows-amd64.exe" />
     </entry>
     <entry>
-        <id>https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster</id>
-        <title>vcluster @ 0.1.5</title>
+        <id>https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster</id>
+        <title>vcluster @ 0.1.6</title>
         <updated>2021-11-10T23:32:54Z</updated>
         <category term="vcluster"/>
-        <content>0.1.5</content>
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-darwin-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-linux-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-windows-amd64.exe" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-darwin-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-linux-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-windows-amd64.exe" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-darwin-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-linux-amd64" />
-        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.5/vcluster-windows-amd64.exe" />
+        <content>0.1.6</content>
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-darwin-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-linux-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-windows-amd64.exe" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-darwin-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-linux-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-windows-amd64.exe" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-darwin-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-linux-amd64" />
+        <link rel="download" href="https://github.com/donmstewart/vcluster/releases/download/0.1.6/vcluster-windows-amd64.exe" />
     </entry>
 </feed>
